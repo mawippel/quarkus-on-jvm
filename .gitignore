@@ -8,6 +8,8 @@ build/
 .settings/
 bin/
 
+postgres-data/
+
 # IntelliJ
 .idea
 *.ipr
