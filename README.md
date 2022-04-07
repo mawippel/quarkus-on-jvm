@@ -47,10 +47,6 @@ You can then execute your native executable with: `./build/quarkus-on-jvm-1.0.0-
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/gradle-tooling.
 
-## Provided Code
+## Docker Compose
 
-### RESTEasy JAX-RS
-
-Easily start your RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+There's a docker-compose file under /src/main/docker-compose.
