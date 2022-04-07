@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Path("/products")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -25,8 +27,26 @@ public class ProductResource {
         return productService.findProduct(productId);
     }
 
+    @GET
+    public List<Product> list() {
+        return productService.findAll();
+    }
+
     @POST
     public Product create(Product product) {
         return productService.insert(product);
+    }
+
+    @PUT
+    @Path("{id}")
+    public Product update(@PathParam("id") Long id, Product product) {
+        return productService.update(id, product);
+    }
+
+    @DELETE
+    @Path("{id}")
+    public Response delete(@PathParam("id") Long id) {
+        productService.delete(id);
+        return Response.ok().build();
     }
 }
